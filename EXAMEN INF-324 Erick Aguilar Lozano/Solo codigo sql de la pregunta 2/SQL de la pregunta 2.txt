@@ -1,0 +1,4 @@
+SELECT ide.lugar_resi as departamento, 
+COUNT(CASE WHEN nt.nota >= 51 then "APROBADO" ELSE NULL END) as "CANTIDAD" 
+FROM identificador ide inner join notas nt on ide.ci = nt.ci 
+GROUP BY departamento
